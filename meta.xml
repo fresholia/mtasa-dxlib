@@ -1,0 +1,26 @@
+<meta>
+    <oop>true</oop>
+    <min_mta_version client="1.3.0-9.04431" />
+
+    <file src="assets/fonts/Roboto-Bold.ttf" />
+    <file src="assets/fonts/Roboto-Regular.ttf" />
+    <file src="assets/fonts/Roboto-Light.ttf" />
+    <file src="assets/fonts/FontAwesome.ttf" />
+    <file src="assets/shaders/BlurShader.fx" />
+    <file src="assets/images/corner.png" />
+    <script src="classlib.lua" type="client" cache="false" />
+    <script src="render.lua" type="client" cache="false" />
+    <script src="ui.lua" type="client" cache="false" />
+    <script src="blur.lua" type="client" cache="false" />
+    <script src="convert.lua" type="client" cache="false" />
+    <script src="test.lua" type="client" cache="false" />
+
+    <script src="widgets/window.lua" type="client" cache="false" />
+    <script src="widgets/tab.lua" type="client" cache="false" />
+    <script src="widgets/button.lua" type="client" cache="false" />
+    <script src="widgets/edit.lua" type="client" cache="false" />
+    <script src="widgets/text.lua" type="client" cache="false" />
+    <script src="widgets/image.lua" type="client" cache="false" />
+    <script src="widgets/rectangle.lua" type="client" cache="false" />
+    <script src="widgets/grid.lua" type="client" cache="false" />
+</meta>

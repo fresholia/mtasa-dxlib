@@ -1,0 +1,32 @@
+local window = guiCreateWindow(screenX/2-550/2, screenY/2-400/2, 550, 400, "Lorem ipsum dolor sit amet", false)
+guiCreateLabel(5, 40, 500, 30, "Test Label test label test label test label test label test label", false, window)
+btn = guiCreateButton(5, 65, 150, 25, "Button", false, window)
+btn = guiCreateButton(165, 65, 150, 25, "Button Hover", false, window)
+setElementData(btn, "active", true)
+btn = guiCreateButton(320, 65, 150, 25, "Button Disable", false, window)
+guiSetEnabled(btn, false)
+
+
+tabpanel = guiCreateTabPanel(5, 100, 300, 170, false, window)
+
+tab1 = guiCreateTab("Tab 1", tabpanel)
+tab2 = guiCreateTab("Tab 2", tabpanel)
+guiCreateLabel(5, 5, 200, 25, "hello world1", false, tab1)
+guiCreateLabel(5, 5, 200, 25, "hello world2", false, tab2)
+
+guiCreateEdit(5, 25, 200, 25, "just input", false, tab1)
+guiCreateEdit(325, 125, 200, 25, "just input", false, window)
+guiCreateCheckBox(325, 155, 200, 25, "Test Checkbox", false, false, window)
+guiCreateCheckBox(325, 175, 200, 25, "Selected Checkbox", true, false, window)
+guiCreateScrollBar(325, 210, 200, 25, true, false, window)
+guiCreateRadioButton(325, 245, 200, 25, "Test Radiobutton", false, window)
+pbar = guiCreateProgressBar(325, 265, 200, 25, false, window)
+guiProgressBarSetProgress(pbar, 50)
+
+gridlist = guiCreateGridList(5, 300, 300, 200, false, window)
+guiGridListAddColumn(gridlist, "1", 0.1)
+guiGridListAddColumn(gridlist, "THIRD", 0.5)
+guiGridListAddColumn(gridlist, "3", 0.2)
+guiGridListAddRow(gridlist, "1", "2", "3")
+guiGridListAddRow(gridlist, "1", "2", "3")
+triggerEvent("libs.convert", localPlayer, window)
