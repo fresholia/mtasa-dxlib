@@ -48,6 +48,7 @@ local UI = Class({
 
     prepare = function(self)
         dxSetRenderTarget(self.renderTarget, true)
+        dxSetBlendMode("modulate_add")
         if self.mode == "dark" then
             --> Background
             dxDrawRectangle(0, 0, self.position.w, self.position.h, tocolor(30, 30, 30, 240))

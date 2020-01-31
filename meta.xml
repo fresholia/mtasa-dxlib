@@ -14,6 +14,7 @@
     <script src="blur.lua" type="client" cache="false" />
     <script src="convert.lua" type="client" cache="false" />
     <script src="test.lua" type="client" cache="false" />
+    <script src="debug.lua" type="client" cache="false" />
 
     <script src="widgets/window.lua" type="client" cache="false" />
     <script src="widgets/tab.lua" type="client" cache="false" />
