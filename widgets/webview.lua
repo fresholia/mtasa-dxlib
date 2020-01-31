@@ -1,4 +1,4 @@
-Window = Class({
+Webview = Class({
     constructor = function(self, args)
         
         self.position = {x=args.x, y=args.y, w=args.w, h=args.h};
@@ -19,5 +19,3 @@ Window = Class({
         return true;
     end;
 });
-
-window = Window({x=0, y=0, w=200, h=200, name="test", parent=false});

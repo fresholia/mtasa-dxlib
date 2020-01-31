@@ -41,6 +41,7 @@ local UI = Class({
             end
         end
         createBlur(self.blurId, 6, self.position)
+        dxSetTestMode("none")
         self:prepare()
         
         return self;
@@ -136,7 +137,7 @@ local UI = Class({
                     elseif element.type == "gui-label" then
                         dxDrawText(element.text, x, y, w, h, primaryColor, 1, Roboto, "left", "top")
                     elseif element.type == "gui-button" then
-                        drawButton(id, element.text, x, y, w, h, 52, 152, 219, 1, Roboto, 1, element:getData("active"), element.disabled)
+                        drawButton(id, element.text, x, y, w, h, 52, 152, 219, 1, Roboto, 1, false, element.disabled)
                     
                         if isInSlot(realX, realY, w, h) then
                             for k, v in pairs(buttons) do

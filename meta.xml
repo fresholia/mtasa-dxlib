@@ -17,6 +17,7 @@
     <script src="debug.lua" type="client" cache="false" />
 
     <script src="widgets/window.lua" type="client" cache="false" />
+    <script src="widgets/webview.lua" type="client" cache="false" />
     <script src="widgets/tab.lua" type="client" cache="false" />
     <script src="widgets/button.lua" type="client" cache="false" />
     <script src="widgets/edit.lua" type="client" cache="false" />
