@@ -219,11 +219,7 @@ local UI = Class({
             self:remove()
             return
         end
-        if getKeyState("mouse1") and self.tick+200 <= getTickCount() then
-            self.tick = getTickCount()
-            self:prepare()
-        end
-        --self:prepare()
+        self:prepare()
         dxDrawImage(self.position.x, self.position.y, self.position.w, self.position.h, self.renderTarget)
     end;
 
@@ -256,27 +252,3 @@ destroy = function()
     end
 end
 addEventHandler("onClientResourceStop", resourceRoot, destroy)
-
-character = function(c)
-    if c and #ConvertCache > 0 then
-        for i=1, #ConvertCache do
-            local row = ConvertCache[i]
-            if row then
-                setTimer(row.prepare, 50, 1, row)
-            end
-        end 
-    end
-end
-addEventHandler("onClientCharacter", root, character)
-
-key = function(k)
-    if k and #ConvertCache > 0 then
-        for i=1, #ConvertCache do
-            local row = ConvertCache[i]
-            if row then
-                setTimer(row.prepare, 50, 1, row)
-            end
-        end 
-    end
-end
-addEventHandler("onClientKey", root, key)

@@ -4,7 +4,8 @@
         So, CPU values ​​may be high due to the CPU debugger.
 ]]--
 local showDebug = true -- if u wanna don't show, change 'false'
-local debugCache = {cpu=0}
+local debugCache, fps = {cpu=0}, 0
+local fpsTick, countFrame = getTickCount(), 0
 
 floorNumber = function(num)
 	return tonumber(string.sub(tostring(num), 0, -2)) or 0
@@ -27,6 +28,12 @@ end
 setTimer(prepare, 500, 0)
 
 renderDebug = function()
-    dxDrawText("CPU Usage: %"..debugCache.cpu, 0, 0, screenX, screenY-20, tocolor(255, 255, 255), 2, "default", "center", "bottom")
+    countFrame = countFrame + 1
+    if getTickCount() - fpsTick >= 1000 then
+        fps = countFrame
+        countFrame = 0
+        fpsTick = getTickCount()
+    end
+    dxDrawText("CPU Usage: %"..debugCache.cpu.." - FPS: "..fps, 0, 0, screenX, screenY-20, tocolor(255, 255, 255), 2, "default", "center", "bottom")
 end
 addEventHandler("onClientRender", root, renderDebug)
