@@ -4,7 +4,7 @@ Window = Class({
         self.position = {x=args.x, y=args.y, w=args.w, h=args.h};
         self.name = args.name or ""
         self.parent = args.parent or false
-
+        self.type = "Window";
         return self;
     end;
 
@@ -19,5 +19,3 @@ Window = Class({
         return true;
     end;
 });
-
-window = Window({x=0, y=0, w=200, h=200, name="test", parent=false});

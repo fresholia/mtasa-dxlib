@@ -13,7 +13,7 @@ local UI = Class({
         local panelW, panelH = guiGetSize(args, false)
         local GuiTree = getElementChildren(args)
         guiWindowSetMovable(window, false)
-        guiSetAlpha(window, 0)
+        guiSetAlpha(window, 0.5)
         guiWindowSetSizable(window, false)
         self.window = window;
         self.renderTarget = dxCreateRenderTarget(panelW, panelH, true)
@@ -201,7 +201,7 @@ local UI = Class({
                                 title = guiGridListGetItemText(element, i, c)
                                 width = guiGridListGetColumnWidth(element, c, false)
                                 --dxDrawRectangle(x, y+27+paddingY, w, 14, tocolor(35, 35, 35, 200))
-                                dxDrawText(title, x+paddingX+7, y+28+paddingY, w+x+paddingX, 12+(y+28+paddingY), primaryColor, 1, RobotoXS, "left", "center")
+                                dxDrawText(title, x+paddingX+7, y+27+paddingY, w+x+paddingX, 12+(y+27+paddingY), primaryColor, 1, RobotoXS, "left", "center")
                                 paddingX = paddingX + width
                             end
                             
