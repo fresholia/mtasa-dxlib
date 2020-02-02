@@ -1,10 +1,12 @@
 Window = Class({
     constructor = function(self, args)
-        
         self.position = {x=args.x, y=args.y, w=args.w, h=args.h};
         self.name = args.name or ""
         self.parent = args.parent or false
         self.type = "Window";
+        self.effects = args.effects or {};
+        self.id = iterate(self);
+
         return self;
     end;
 

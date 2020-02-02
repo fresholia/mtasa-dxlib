@@ -1,5 +1,9 @@
 local renderElements = {}
 
+iterate = function(data)
+    return math.random(1, 99999);
+end;
+
 Render = Class({
     constructor = function(self, table)
         local renderId = #renderElements + 1;
@@ -13,10 +17,22 @@ Render = Class({
     prepare = function(self)
         dxSetRenderTarget(self.renderTarget, true)
         dxSetBlendMode("modulate_add")
-
-        for id, row in ipairs(self.data) do
+        for id, row in pairs(self.data) do
+            local x, y, w, h = row.position.x, row.position.y, row.position.w, row.position.h
+            if row.parent then
+                x, y = row.parent.position.x + x, row.parent.position.y + y
+            end
+            if row.effects then
+                if row.effects.blur then
+                    createBlur(row.id, 5, {x=x, y=y, w=w, h=h})
+                end
+            end
+            
             if row.type == "Window" then
-                dxDrawRectangle(row.position.x, row.position.y, row.position.w, row.position.h, tocolor(25, 25, 25))
+                dxDrawRectangle(x, y, w, h, tocolor(25, 25, 25, 200))
+            elseif row.type == "Button" then
+                dxDrawRectangle(x, y, w, h, tocolor(225, 225, 225))
+                
             end
         end
 
@@ -29,7 +45,7 @@ Render = Class({
 })
 
 renderAll = function()
-    for id, row in ipairs(renderElements) do
+    for id, row in pairs(renderElements) do
         if row then
             dxDrawImage(row.position.x, row.position.y, row.position.w, row.position.h, row.rt)
         end
