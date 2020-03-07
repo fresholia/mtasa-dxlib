@@ -16,6 +16,10 @@ Render = Class({
         renderElements[renderId] = {rt=self.renderTarget, position=table[2]};
         return renderId;
     end;
+
+    destroy = function(self)
+        
+    end;
 })
 
 renderAll = function()
