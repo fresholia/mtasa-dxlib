@@ -40,10 +40,9 @@ local UI = Class({
                 end
             end
         end
-        createBlur(self.blurId, 6, self.position)
-        dxSetTestMode("none")
-        self:prepare()
         
+        createBlur(self.blurId, 6, self.position)
+        self:prepare()
         return self;
     end;
 
