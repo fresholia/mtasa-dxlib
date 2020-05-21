@@ -31,7 +31,7 @@ const Button = {
     var h = h + "px";
     var importer = "render";
     if (parent) {
-      importer = `${parent}`;
+      importer = parent;
     }
     document.getElementById(importer).innerHTML += `
       <a href="#" id="button-${id}" class="btn" style="margin-left: ${x}; margin-top: ${y}; line-height: ${h}; width: ${w}; height: ${h};"><p>${title}</p></a>
