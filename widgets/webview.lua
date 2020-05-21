@@ -31,16 +31,20 @@ Webview = setmetatable({
                 if not isTimer(self.renderData) then
                     self.renderData = setTimer(
                         function()
-                            dxDrawImage(self.position.x, self.position.y, self.size.x, self.size.y, self.browser)
-                            focusBrowser(self.browser)
-                            if getKeyState("mouse1") and self.lastClick+200 <= getTickCount() then
-                                self.lastClick = getTickCount()
-                                injectBrowserMouseDown(self.browser, "left")
-                                injectBrowserMouseUp(self.browser, "left")
-                            end
-                            if isCursorShowing() then
-                                local x, y, _, _, _ = getCursorPosition()
-                                injectBrowserMouseMove(self.browser, x*screenSize.x, y*screenSize.y)
+                            if self.ready then
+                                dxDrawImage(self.position.x, self.position.y, self.size.x, self.size.y, self.browser)
+                                focusBrowser(self.browser)
+                                if getKeyState("mouse1") and self.lastClick+200 <= getTickCount() then
+                                    self.lastClick = getTickCount()
+                                    injectBrowserMouseDown(self.browser, "left")
+                                    injectBrowserMouseUp(self.browser, "left")
+                                end
+                                if isCursorShowing() then
+                                    local x, y, _, _, _ = getCursorPosition()
+                                    injectBrowserMouseMove(self.browser, x*screenSize.x, y*screenSize.y)
+                                end
+                            else
+                                dxDrawText("Loading Webview...", self.position.x, self.position.y, self.size.x, self.size.y, tocolor(255, 255, 255, 255/2), 1.1, "default", "center", "center")
                             end
                         end,
                     0, 0)
