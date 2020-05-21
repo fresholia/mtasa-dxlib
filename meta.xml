@@ -6,27 +6,25 @@
     <file src="assets/fonts/Roboto-Regular.ttf" />
     <file src="assets/fonts/Roboto-Light.ttf" />
     <file src="assets/fonts/FontAwesome.ttf" />
-    <file src="assets/shaders/BlurShader.fx" />
     <file src="assets/images/corner.png" />
-    <script src="classlib.lua" type="client" cache="false" />
-    <script src="render.lua" type="client" cache="false" />
-    <script src="ui.lua" type="client" cache="false" />
-    <script src="blur.lua" type="client" cache="false" />
-    <script src="convert.lua" type="client" cache="false" />
-    <!--<script src="test.lua" type="client" cache="false" />-->
-    <script src="debug.lua" type="client" cache="false" />
 
-    <script src="widgets/render.lua" type="client" cache="false" />
-    <script src="widgets/importlib.lua" type="client" cache="false" />
-    <script src="widgets/window.lua" type="client" cache="false" />
-    <script src="widgets/webview.lua" type="client" cache="false" />
-    <script src="widgets/tab.lua" type="client" cache="false" />
-    <script src="widgets/button.lua" type="client" cache="false" />
-    <script src="widgets/edit.lua" type="client" cache="false" />
-    <script src="widgets/text.lua" type="client" cache="false" />
-    <script src="widgets/image.lua" type="client" cache="false" />
-    <script src="widgets/rectangle.lua" type="client" cache="false" />
-    <script src="widgets/grid.lua" type="client" cache="false" />
+    <script src="main.lua" type="client" />
+    <script src="debug.lua" type="client" />
 
-    <script src="widgets/test.lua" type="client" cache="false" />
+    <script src="cegui/main.lua" type="client" />
+    <script src="cegui/test.lua" type="client" />
+
+    <script src="widgets/importlib.lua" type="client" />
+    <script src="widgets/window.lua" type="client" />
+    <script src="widgets/webview.lua" type="client" />
+    <script src="widgets/tab.lua" type="client" />
+    <script src="widgets/button.lua" type="client" />
+    <script src="widgets/edit.lua" type="client" />
+    <script src="widgets/text.lua" type="client" />
+    <script src="widgets/image.lua" type="client" />
+    <script src="widgets/rectangle.lua" type="client" />
+    <script src="widgets/grid.lua" type="client" />
+
+    <script src="widgets/main.lua" type="client" />
+    <script src="widgets/test.lua" type="client" />
 </meta>
