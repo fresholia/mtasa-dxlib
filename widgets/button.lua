@@ -1,6 +1,7 @@
 local lastButtonID = 0
 
 function createButton(x, y, w, h, name, parent)
+    assert(type(LocalDocument) == "table", "Bad argument @LocalDocument at argument 1, expect element, create firstly")
 	assert(tonumber(x), "Bad argument @createButton at argument 1, expect number got " .. type(x))
 	assert(tonumber(y), "Bad argument @createButton at argument 2, expect number got " .. type(y))
 	assert(tonumber(w), "Bad argument @createButton at argument 3, expect number got " .. type(w))
