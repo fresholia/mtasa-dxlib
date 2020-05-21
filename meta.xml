@@ -8,6 +8,11 @@
     <file src="assets/fonts/FontAwesome.ttf" />
     <file src="assets/images/corner.png" />
 
+    <file src="assets/html/stylesheets/app.bundle.css" />
+    <file src="assets/html/scripts/app.bundle.js" />
+    <file src="assets/html/scripts/app.mta.js" />
+    <file src="assets/html/index.html" />
+
     <script src="main.lua" type="client" />
     <script src="debug.lua" type="client" />
 

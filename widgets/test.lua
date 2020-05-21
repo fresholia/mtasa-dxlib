@@ -4,4 +4,3 @@
         exports.resourcename:import({Window, Webview, Button})
 ]]--
 
-loadstring(import("*"))()

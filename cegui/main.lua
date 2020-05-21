@@ -4,7 +4,7 @@
     Don't use it for now.
     -------------------------------
     Don't care about file layout :S 
-]]--
+
 ConvertCache = {}
 local UI = Class({
     constructor = function(self, args)
@@ -252,3 +252,4 @@ destroy = function()
     end
 end
 addEventHandler("onClientResourceStop", resourceRoot, destroy)
+]]--
