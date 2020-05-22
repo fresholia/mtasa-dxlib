@@ -51,7 +51,7 @@ addCommandHandler("update",
                     for index, node in ipairs(metaData) do
                         local fileType = xmlNodeGetName(node)
                         local fileLocation = xmlNodeGetAttribute(node, "src")
-                        if fileType == "script" then
+                        if fileType == "script" or fileType == "file" then
                             if fileLocation:find("/") then
                                 local explodeFile = explode(fileLocation, "/")
                                 fileName = explodeFile[1]
