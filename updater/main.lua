@@ -1,16 +1,5 @@
 local openVersionFile = {}
 
-function explode(div, str)
-    if (div=='') then return false end
-    local pos,arr = 0,{}
-    for st,sp in function() return string.find(str,div,pos,true) end do
-      table.insert(arr,string.sub(str,pos,st-1))
-      pos = sp + 1
-    end
-    table.insert(arr,string.sub(str,pos))
-    return arr
-end
-
 addEventHandler("onResourceStart", resourceRoot,
     function()
         local openVersionFile = fileOpen("updater/version.cfg")
@@ -52,12 +41,7 @@ addCommandHandler("update",
                         local fileType = xmlNodeGetName(node)
                         local fileLocation = xmlNodeGetAttribute(node, "src")
                         if fileType == "script" or fileType == "file" then
-                            if fileLocation:find("/") then
-                                local explodeFile = explode(fileLocation, "/")
-                                fileName = explodeFile[1]
-                            else
-                                fileName = fileLocation
-                            end
+         
                             if fileExists("old/"..currentVersion.."/"..fileLocation) then
                                 fileDelete("old/"..currentVersion.."/"..fileLocation)
                             end
