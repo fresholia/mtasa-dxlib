@@ -1,23 +1,7 @@
 function testAllElements()
-    local window, header, body = createWindow(450, 150, 512, 512, "test window", false)
+    local window = Window(450, 150, 512, 512, "test window", false)
 
-    local button = createButton(25, 25, 250, 25, "click me", body)
-
-    listenElement(button, "click",
-        function()
-
-        end
-    )
-    listenElement(button, "mouseIn",
-        function()
-
-        end
-    )
-    listenElement(button, "mouseOut",
-        function()
-
-        end
-    )
+    Button(25, 25, 250, 25, "click me", window)
 end
 
 addEventHandler("onClientResourceStart", resourceRoot,

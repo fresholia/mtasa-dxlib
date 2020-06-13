@@ -15,7 +15,7 @@ addEventHandler("onResourceStart", resourceRoot,
                         local newestVersion = versionData.version
                         if newestVersion > currentVersion then
                             print("mta-dxlib > script version is outdated, there is an update")
-                            print("mta-dxlib > curr version: "..currentVersion.." - newest version: "..newestVersion)
+                            print("mta-dxlib > current version: "..currentVersion.." - newest version: "..newestVersion)
                             print("mta-dxlib > current version last update: "..currentVersionData.last_update)
                             print(" ")
                             print("mta-dxlib > type \"update mta-dxlib\" to update")
