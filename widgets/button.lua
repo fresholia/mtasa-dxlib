@@ -1,4 +1,5 @@
 local lastButtonID = 0
+local classesWithID = {}
 
 Button = setmetatable({
     constructor = function(self, x, y, w, h, name, parent)
@@ -14,11 +15,19 @@ Button = setmetatable({
 
         self.id = "button-"..lastButtonID
         self.index = lastButtonID
+
+        classesWithID[lastButtonID] = self
         return self
     end;
     create = function(self)
      
         return self
+    end;
+    click = function(self)
+        outputChatBox("anan")
+    end;
+    hover = function(self)
+
     end;
 }, {
 __call = function(cls, ...)
@@ -32,3 +41,12 @@ __call = function(cls, ...)
     return self
 end
 })
+
+addEvent("button.click", true)
+addEventHandler("button.click", root,
+    function(buttonID)
+        if classesWithID[buttonID] then
+            classesWithID[buttonID]:click()
+        end
+    end
+)
