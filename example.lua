@@ -30,7 +30,7 @@ local function foo()
     )
 
     -- ** Non table-based function:
-    libs:loadNonOOPFunctions()
+    lib:loadNonOOPFunctions()
     local rect = drawRectangle(25, 25, 250, 250, tocolor(255, 0, 0))
     on("click", rect,
         function()
