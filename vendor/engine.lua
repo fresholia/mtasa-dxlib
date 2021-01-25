@@ -1,15 +1,30 @@
 lib.engine = new("lib.engine")
 
-
 function lib.engine.prototype.____constructor()
     self.events = {}
 
     self.validEvents = {
-        ["hover"] = true,
-        ["unhover"] = true,
-        ["removed"] = true,
+        ["mouseIn"] = true,
+        ["mouseOut"] = true,
+        ["remove"] = true,
+        ["click"] = true
     }
     return true
+end
+
+--[[
+    **lib.engine:parent()
+    **  Get/set parent element
+    **  Example:
+    **      lib.engine:parent(element)
+    **      lib.engine:parent(element, anotherElement)
+]]--
+function lib.engine.prototype.parent(self, element, parent)
+    if parent then  --**SET
+
+    else            --**GET
+
+    end
 end
 
 --[[
@@ -17,7 +32,19 @@ end
     **  Example:
     **      if lib.engine:type(element) == "window" then
 --]]
-function lib.engine.prototype.type(self)
+function lib.engine.prototype.type(self, element)
+
+    return true
+end
+
+--[[
+    **lib.engine:destroy
+    **  Example:
+    **      lib.engine:destroy(element)
+    **  OOP:
+    **      element:destroy()
+--]]
+function lib.engine.prototype.destroy(self, element)
 
     return true
 end
