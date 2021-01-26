@@ -20,7 +20,7 @@ end
     **      lib.engine:parent(element, anotherElement)
 ]]--
 function lib.engine.prototype.parent(self, element, parent)
-    local element = element.el
+    local element = self.elements[element]
     if parent then  --**SET
 
     else            --**GET
@@ -34,7 +34,7 @@ end
     **      if lib.engine:type(element) == "window" then
 --]]
 function lib.engine.prototype.type(self, element)
-    local element = element.el
+    local element = self.elements[element]
     return true
 end
 
@@ -46,7 +46,8 @@ end
     **      element:destroy()
 --]]
 function lib.engine.prototype.destroy(self, element)
-    local element = element.el
+    local libSelf = lib.prototype
+    table.remove(libSelf.elements, element)
     return true
 end
 
@@ -60,7 +61,7 @@ end
     **          lib:on("hover", element, callbackFunction)
 --]]
 function lib.engine.prototype.on(self, eventName, element, callback)
-    local element = element.el
+    local element = self.elements[element]
     if self.validEvents[eventName] then
 
     end
@@ -76,19 +77,16 @@ end
     **          element.on("hover", callbackFunction)
 ]]--
 function lib.engine.prototype.loadEvents(self, element)
-    local el = {}
-
-    el.el = element
-    el.on = function(eventName, callback)
+    element.on = function(eventName, callback)
         if self.validEvents[eventName] then
             
         end
 
-        return el
+        return element
     end
 
-    el.destroy = self:destroy
-    el.parent = self:parent
+    element.destroy = self:destroy
+    element.parent = self:parent
 
-    return el
+    return element
 end
