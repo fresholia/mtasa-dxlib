@@ -85,8 +85,12 @@ function lib.engine.prototype.loadEvents(self, element)
         return element
     end
 
-    element.destroy = self:destroy
-    element.parent = self:parent
+    element.destroy = function()
+        self:destroy(element)
+    end
+    element.parent = function()
+        self:parent(element)
+    end
 
     return element
 end
